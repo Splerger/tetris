@@ -48,25 +48,46 @@ function main () {
 
     switch (posy) {
         case 1:
-            
+            if (led.plot(posx, posy++)) {
+                control.waitMicros(50000)
+                led.plot(posx, posy)
+                posx = 2
+                posy = 0
+                led.plot(posx, posy)
+            }
             break
 
         case 2:
-
+            if (led.plot(posx, posy++)) {
+                control.waitMicros(50000)
+                led.plot(posx, posy)
+                posx = 2
+                posy = 0
+                led.plot(posx, posy)
+            }
             break
 
         case 3:
-
+            if (led.plot(posx, posy++)) {
+                control.waitMicros(50000)
+                led.plot(posx, posy)
+                posx = 2
+                posy = 0
+                led.plot(posx, posy)
+            }
             break
 
         case 4:
-
+            led.plot(posx, posy)
+            posx = 2
+            posy = 0
+            led.plot(posx, posy)
             break
     }
-    /* move every one second
+    /* move every 2 seconds
        Done in microsecond because stupid
     */
-    control.waitMicros(1000000)
+    control.waitMicros(2000000)
     led.unplot(posx, posy)
     if (posy == 4) {
     	
